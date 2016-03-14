@@ -8,6 +8,11 @@ const app = express();
 // Configure application
 app.use(bodyParser.json());
 
+//
+app.get('/', (req, resp) => {
+  resp.send('Hello');
+});
+
 // API
 app.use('/api', require('./api'));
 
