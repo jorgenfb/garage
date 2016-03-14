@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "A server to get my garage online",
   "main": "index.js",
+  "repository": {
+    "url": "https://github.com/jorgenfb/garage.git"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
