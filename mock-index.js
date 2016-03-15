@@ -3,7 +3,7 @@ const mockery = require('mockery');
 const onoffMock = {
   Gpio: function() {
     return {
-      read: function(callback) { callback(0); },
+      read: function(callback) { callback(null, 1); },
       write: function() { console.log('Mock write'); }
     }
   }

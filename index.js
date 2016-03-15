@@ -8,10 +8,8 @@ const app = express();
 // Configure application
 app.use(bodyParser.json());
 
-//
-app.get('/', (req, resp) => {
-  resp.send('Hello');
-});
+// Serve web app
+app.use(express.static('web'));
 
 // API
 app.use('/api', require('./api'));
