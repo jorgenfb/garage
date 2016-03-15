@@ -1,11 +1,12 @@
 const express = require('express');
 const bodyParser = require('body-parser');
-const onoff = require('onoff');
+const cors = require('cors');
 
 // Create application
 const app = express();
 
 // Configure application
+app.use(cors());
 app.use(bodyParser.json());
 
 // API
