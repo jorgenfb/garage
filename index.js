@@ -9,6 +9,9 @@ const app = express();
 app.use(cors());
 app.use(bodyParser.json());
 
+// Serve web app
+app.use(express.static('web'));
+
 // API
 app.use('/api', require('./api'));
 
