@@ -10,7 +10,7 @@ app.use(cors());
 app.use(bodyParser.json());
 
 // Serve web app
-app.use(express.static('web'));
+app.use(express.static(__dirname  + '/web'));
 
 // API
 app.use('/api', require('./api'));
