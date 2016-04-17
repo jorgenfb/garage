@@ -33,7 +33,7 @@ const subscription = garage.watch().subscribe(value => {
 		const request = http.request({
 			protocol: 'https',
 			hostname: 'maker.ifttt.com',
-			path: '/trigger/' + event + '/with/key/' + apiToken
+			path: '/trigger/' + event + '/with/key/' + apiToken,
 			port: 80
 		}, response => {
 			o.next(response.statusCode);
