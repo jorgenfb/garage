@@ -24,9 +24,9 @@ function Garage() {
 				sensor.read((err, value) => {
 					if (err) {
 						reject(err);
-						return;
+					} else {
+						resolve(Boolean(value));
 					}
-					return Boolean(value);
 				});
 		});
 	}
@@ -62,7 +62,7 @@ function Garage() {
 
 	// Expose methods
 	this.release = release;
-	this.isOpen = release;
+	this.isOpen = isOpen;
 	this.toggle = toggle;
 	this.watch = watch;
 }
