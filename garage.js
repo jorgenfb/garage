@@ -64,6 +64,7 @@ function Garage() {
 	this.release = release;
 	this.isOpen = release;
 	this.toggle = toggle;
+	this.watch = watch;
 }
 
 module.exports = new Garage();
