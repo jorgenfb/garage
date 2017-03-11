@@ -57,7 +57,7 @@ function Garage() {
 				sensor.unwatch(watcher);
 			}
 		})
-		.debounceTime(500);
+		.debounceTime(1000);
 	}
 
 	// Expose methods
