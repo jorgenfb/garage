@@ -38,8 +38,7 @@ function sendEvent(event) {
 		const request = https.request({
 			hostname: 'maker.ifttt.com',
 			path: path,
-			port: 443
-		}, response => {
+			port: 443 }, response => {
 			console.log('Logged event');
 			o.next(response.statusCode);
 			o.complete();
@@ -80,7 +79,12 @@ const observables = garage.watch()
 const open$ = observables[0];
 const close$ = observables[1];
 
-const alarm$ = open$.flatMap(() => Observable.interval(5 * 60 * 1000).takeUntil(close$));
+const alarm$ = open$.flatMap(() => {
+	// Notify after 5, 15, 60 and 120 minutes
+	return Observable.of(5, 15, 60, 120) 
+		.delayWhen(t => Observable.timer(t * 60 * 1000))
+		.takeUntil(close$);
+});
 
 alarm$.subscribe(() => {
 	console.log('Alarm');
